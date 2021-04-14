@@ -5,7 +5,7 @@ const FULL_HEART = '♥'
 let errorDiv = document.querySelector('#modal')
 //let glyph = document.querySelector('span.like-glyph')
 //let idName = document.querySelector('h2')
-function hideModal(inputHide = "hidden") 
+function hideModal(inputHide = "hidden")  // this function will change the class name
 {
   errorDiv.className = `${inputHide}`
 }
@@ -21,7 +21,7 @@ function glyphModel(glyph){
     console.log("deactive")
     //return;   /// this is important because after this if statement runs, glyph.innerText is empty so the next else statement runs
   }
-  else 
+  else // or get rid of else condition statement
   { 
     glyph.innerText = FULL_HEART
     glyph.className = "activated-heart"
@@ -35,7 +35,8 @@ function glyphModel(glyph){
     clickE.preventDefault();
     mimicServerCall()
     .then(function(res) {
-      let glyph = document.querySelector("li.like span")
+      let glyph = clickE.target
+      console.log(glyph)
       glyphModel(glyph)   
     })
     .catch(() => {
