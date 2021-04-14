@@ -45,11 +45,11 @@ glyphB.addEventListener('click',(clickE)=>{
     .catch(() => {
       console.log("error")
       //hideModal("un-hidden")
-      setTimeout( hideModal("un-hidden"), 300)    
+      setTimeout( hideModal("un-hidden"), 3000)    
     })
     
   })
-  
+
     
 
 
