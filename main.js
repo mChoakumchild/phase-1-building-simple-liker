@@ -3,14 +3,17 @@ const EMPTY_HEART = '♡'
 const FULL_HEART = '♥'
 
 let errorDiv = document.querySelector('#modal')
-//let glyph = document.querySelector('span.like-glyph')
+let glyphB = document.querySelector('span.like-glyph')
 //let idName = document.querySelector('h2')
 function hideModal(inputHide = "hidden")  // this function will change the class name
 {
   errorDiv.className = `${inputHide}`
 }
 
-hideModal();
+document.addEventListener('DOMContentLoaded', () => {
+  hideModal();
+})
+
 
 function glyphModel(glyph){
   console.log(glyph)
@@ -31,7 +34,7 @@ function glyphModel(glyph){
 }
 
 
-  document.addEventListener('click',(clickE)=>{
+glyphB.addEventListener('click',(clickE)=>{
     clickE.preventDefault();
     mimicServerCall()
     .then(function(res) {
@@ -41,10 +44,12 @@ function glyphModel(glyph){
     })
     .catch(() => {
       console.log("error")
-      setTimeout( hideModal("hidden"), 300)    
+      //hideModal("un-hidden")
+      setTimeout( hideModal("un-hidden"), 300)    
     })
     
   })
+  
     
 
 
